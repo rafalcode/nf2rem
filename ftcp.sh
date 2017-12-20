@@ -47,25 +47,29 @@ for f in ${CFLA[@]}; do
     fi
 done
 LDEST=~/nf2rem
-2>&1 echo "Of a total ${#CFLA[@]}i files on remote computer, ${#NWF[@]} are new and will be downloaded to $LDEST"
+2>&1 echo "Of a total ${#CFLA[@]} files on remote computer, ${#NWF[@]} are new and will be downloaded to $LDEST"
 
 # We prefer to render the array contents onto a single string for ftp operations.
+# Call this string A or $A
 for nf in ${NWF[@]}; do
     A+=$nf
 done
 
+if [ "$A" != "" ]; then
 ftp -n $REM <<END_SCRIPT2
 quote USER $U
 quote PASS $P
-lcd $DEST
+lcd $LDEST
 cd nf2rem
 get $A
 quit
 END_SCRIPT2
+fi
 
 # With the new file copied over, we can update the Past File Listing so that it is not downloaded again
+# and in passing calculate the number of lines it has.
 for nf in ${NWF[@]}; do
-    cwc=`wc -l $nf |cut -d' ' -f1`
+    cwc=`wc -l ${LDEST}/$nf |cut -d' ' -f1`
     echo "Copied over $nf number lines $cwc ... adding to Past Filelisting $PF2"
     echo $nf >> $PF2
 done
