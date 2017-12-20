@@ -3,7 +3,8 @@
 EXPECTED_ARGS=1 # change value to suit!
 # some quick "argument accounting"
 if [ $# -ne $EXPECTED_ARGS ]; then
-    REM="ks3298968.kimsufi.com"
+    # REM="ks3298968.kimsufi.com"
+    REM="chpc-hf63-3.st-andrews.ac.uk"
     >&2 echo "No remote server given, shall use $REM"
 else
     REM=$1
@@ -27,7 +28,7 @@ CFLA=( $CFL )
 2>&1 echo "Length of remote file listing is ${#CFLA[@]}"
 
 # Past file listing: note this is a remote file listing.
-PF2=~/crologs/rnf2.lst
+PF2=~/crologs/hfnf.lst
 if [ ! -e $PF2 ]; then
     echo "Error: $PF2 must exist for this program to run" && exit
 fi
@@ -63,4 +64,6 @@ quit
 END_SCRIPT2
 
 # With the new file copied over, we can update the Past File Listing so that it is not downloaded again
-
+for nf in ${NWF[@]}; do
+    echo $nf >> $PF2
+done
