@@ -17,7 +17,10 @@ The are four increasing grades of difficulty in the problem:
 
 The approach adopted is to sole the easier problems first and build up from there.
 
-The service capability of the local windows machine
+The FTP service capability of the local windows machine is noted, though as this only refers to Modern WIndows machines, some study of the more basic Linux to Windows communciation software (SAMBA and smbclient) was done.
+
+# File description
+* cron.lines: the lines required in the user's crontab. This git repository must be cloned in ~/rafgh/nf2rem for these to work.
 
 # Cron-nature of script
 As the script is run on a regular basis, it must be in the current user's crontab file. The shuld be a script to check whether these are in place.
