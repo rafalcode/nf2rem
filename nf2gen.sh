@@ -25,7 +25,7 @@ else
 fi
 
 # use typical bash tools to generate a file with a (slightly) varying number of lines
-seq $NL | xargs -I -- echo "hello" > ${DEST}/${OF}
+seq $NL | xargs -I -- echo "$HOSTNAME says hello" > ${DEST}/${OF}
 
 # see how many lines it has
 N=`wc -l ${DEST}/${OF} | cut -d' ' -f1`
