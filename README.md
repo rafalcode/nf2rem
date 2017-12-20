@@ -36,6 +36,8 @@ So the remote server needs to keep a Past File Listing in a certain place. We wi
 
 * Some small configuration work on Windows machine may be necessary as they are not usually enabled by default for this sort of operation. In particular, a sharing folder must be designated. Its settings configuration must be revised so that security and network parameters do not shut out attempts by (even) an authorised remote server to access a certain folder.
 * Smbclient from the samba suite of software is able to communicate with a windows machine, if all the above have been configured correctly. It is very similar in style to the old ftp clinet that most inux distributions have.
-* Modern Windows machines (i.e. Windows 10) are able to run ftp services. These can be set up with Winkey+X and enable certain program features. Trivial FTP is avaiable, which means that the ftp script will work correctly.
+* Modern Windows machines (i.e. Windows 10) are able to run ftp services. These can be set up with:
+Winkey+X | Programs | PRograms and features
+and iby enabling TFTP and IIS FTP services.
 * The test local Windows compute is a home Windows 10 computer. 
 * smbtree is a useful Linux command for seeing windows shares on a local network
