@@ -26,7 +26,6 @@ quit
 END_SCRIPT
 `
 CFLA=( $CFL )
-2>&1 echo "Length of remote file listing is ${#CFLA[@]}"
 
 # Past file listing: note this is a remote file listing.
 PF2=~/crologs/hfnf.lst
@@ -47,8 +46,8 @@ for f in ${CFLA[@]}; do
         NWF+=($f)
     fi
 done
-
-echo "a total ${#NWF[@]} new files found"
+LDEST=~/nf2rem
+2>&1 echo "Of a total ${#CFLA[@]}i files on remote computer, ${#NWF[@]} are new and will be downloaded to $LDEST"
 
 # We prefer to render the array contents onto a single string for ftp operations.
 for nf in ${NWF[@]}; do
@@ -66,5 +65,7 @@ END_SCRIPT2
 
 # With the new file copied over, we can update the Past File Listing so that it is not downloaded again
 for nf in ${NWF[@]}; do
+    cwc=`wc -l $nf |cut -d' ' -f1`
+    echo "Copied over $nf number lines $cwc ... adding to Past Filelisting $PF2"
     echo $nf >> $PF2
 done
