@@ -12,19 +12,19 @@ Standing for "New File TO REMote", this is a shell script task, whereby a remote
 4. Add notes on downloading software/sharing folders if necessary.
 
 # Problem orientation
-The are four increasing grades of difficulty in the problem:
-1) local folder check
-2) remote linux check using ftp
-3) Local Network Windows check using smbclient (very sinilar to ftp).
-4) remote Windows check using smbclient
+The are three increasing grades of difficulty in the problem:
+1) local test environment to simulate task problem
+2) local-to-local new file checks
+3) remote-local new file check (allowing for network permissions, FTP is most portable solution)
 
 The approach adopted is to solve the easier problems first and build up from there.
 
 The FTP service capability of the local Windows machine is noted, though as this only refers to modern Windows machines, Failing this there is the option of filezilla server, which is a mature and widely used client and server and hich most versions of Windows can install. The proviso with FTP is that the network and firewall settings must allow it, often in the security enhanced TLS protocol and this is not often aviable by default. It certainly isn't in home LAN settings and in institutions is only available on request.
 
 # File descriptions
-* nf2cp.sh is the main
+* nf2cp.sh is the main script, if local computer is generating its own files and crontab is set up, only this script is required.
 * cron.lines: the lines required in the user's crontab. This git repository must be cloned in ~/rafgh/nf2rem for these to work.
+* chkct.sh this script will check the current crontab for the appropriate l
 
 # Requirements and assumptions for remote server
 * Xargs version with -I option available.
