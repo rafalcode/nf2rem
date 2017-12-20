@@ -1,5 +1,5 @@
 # nf2rem
-Standing for "New File TO REMote". THis is a shell script task, whereby a remote linux computer contacts a local Windows computer abotu a a certain folder and a possible new file in that folder.
+Standing for "New File TO REMote", this is a shell script task, whereby a remote linux computer contacts a local Windows computer about a certain folder and a possible new file in that folder. THe remote shell script identifies files that are new in that folder, copies them to a (its) local folder and calculate the number of lines int he new files and sends an email to a certain email address with the subject line giving the number of lines in the new files.
 
 # Problem description
 
@@ -21,6 +21,12 @@ The FTP service capability of the local windows machine is noted, though as this
 
 # File description
 * cron.lines: the lines required in the user's crontab. This git repository must be cloned in ~/rafgh/nf2rem for these to work.
+
+# Requirements and assumptions for remote server
+* Xargs version with -I option available.
+* cron logs for the operating user held in ~/crologs
+* remote account password held in user-read-only file called p66.txt in ~/crologs
+* the git repository of scripts is held in folder "nf2rem" found in ~/rafgh folder (clone with git clone https://github.com/rafalcode/nf2rem)
 
 # Cron-nature of script
 As the script is run on a regular basis, it must be in the current user's crontab file. The shuld be a script to check whether these are in place.
