@@ -1,4 +1,7 @@
+![alt text](https://raw.githubusercontent.com/rafalcode/nf2rem/master/sche.png)
+
 # nf2rem
+
 Standing for "New File TO REMote", this is a shell script task, whereby a remote linux computer contacts a local Windows computer about a certain folder and a possible new file in that folder. THe remote shell script identifies files that are new in that folder, copies them to a (its) local folder and calculate the number of lines int he new files and sends an email to a certain email address with the subject line giving the number of lines in the new files.
 
 # Problem description
