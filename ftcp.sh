@@ -4,7 +4,8 @@ EXPECTED_ARGS=1 # change value to suit!
 # some quick "argument accounting"
 if [ $# -ne $EXPECTED_ARGS ]; then
     # REM="ks3298968.kimsufi.com"
-    REM="chpc-hf63-3.st-andrews.ac.uk"
+    # REM="chpc-hf63-3.st-andrews.ac.uk"
+    REM="vps226116.ovh.net"
     >&2 echo "No remote server given, shall use $REM"
 else
     REM=$1
