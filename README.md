@@ -1,6 +1,13 @@
 # nf2rem
 Standing for "New File TO REMote". THis is a shell script task, whereby a remote linux computer contacts a local Windows computer abotu a a certain folder and a possible new file in that folder.
 
+# Problem description
+
+1. Automatically check (daily) a specified folder on a local Windows machine to see if a new file has been added
+2. If new file has been added automatically copy the new file from the local Windows machine to a folder on the remote Linux server
+3. If new file has been added automatically send an Email to a specified address with the number of lines in the new file in the subject line
+4. Add notes on downloading software/sharing folders if necessary.
+
 # Problem orientation
 The are four increasing grades of difficulty in the problem:
 1) local folder check
@@ -9,6 +16,8 @@ The are four increasing grades of difficulty in the problem:
 4) remote Windows check using smbclient
 
 The approach adopted is to sole the easier problems first and build up from there.
+
+The service capability of the local windows machine
 
 # Cron-nature of script
 As the script is run on a regular basis, it must be in the current user's crontab file. The shuld be a script to check whether these are in place.
