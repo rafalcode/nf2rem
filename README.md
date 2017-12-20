@@ -1,4 +1,4 @@
-[alt text](https://raw.githubusercontent.com/rafalcode/nf2rem/master/sche.png)
+![alt text](https://raw.githubusercontent.com/rafalcode/nf2rem/master/sche.png)
 
 # nf2rem
 
