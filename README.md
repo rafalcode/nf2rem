@@ -21,14 +21,16 @@ The are three increasing grades of difficulty in the problem:
 The approach adopted is to solve the easier problems first and build up from there. The main challenge is step 3 as it's a heterogeneous network, i.e. Linux and WIndows. If Linux-to-linux, the rsync program could be used without any scripts at all. WinSCP is also a piece of software strikes a good balance between ease of use and security, allowing both remote Linux and local WIndows communicate and copy files using the SSH protocol.
 
 ## FTP and Windows
-The FTP service capability of the local Windows machine is noted, though as this only refers to modern Windows machines, Failing this there is the option of filezilla server, which is a mature and widely used client and server and hich most versions of Windows can install. The proviso with FTP is that the network and firewall settings must allow it, often in the security enhanced TLS protocol and this is not often aviable by default. It certainly isn't in home LAN settings and in institutions is only available on request.
+The FTP service capability of the modern Windows machine is noted. Failing this there is the option of Filezilla server. The proviso with FTP is that the network and firewall settings must allow it, usually with TLS added ... not often now permitted by default. 
+
+OpenSSH for Windows is freely available [here](https://github.com/PowerShell/Win32-OpenSSH/releases) and is the chosen solution for this task.
 
 ## Security concerns
 Heightened security always introduces more operting complications which these script would have to be hardened for. For example, anonymous FTP, would have made thigns easier, but this was avoided here due to lack of security.
 
 # File descriptions
+* nf2ssh.sh is main SSH solution for SSH-only networks characteristic of high security networks. SFTP is the transfer protocol used.
 * nf2cp.sh is the main script, if local computer is generating its own files and crontab is set up, only this script is required.
-* nf2ssh.sh is a secondary solution for SSH-only networks characteristic of high security networks. SFTP is the transfer protocol used.
 * cron.lines: the lines required in the user's crontab. This git repository must be cloned in ~/rafgh/nf2rem for these to work.
 * chkct.sh this script will check the current crontab for the appropriate lines.
 * nf2gen.sh this is a test envirnment file: generates new files in a certain directory
