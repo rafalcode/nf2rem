@@ -42,7 +42,6 @@ for i in ${NWF[@]}; do
     WCL=`wc -l ~/nf2rem/$i | cut -d' ' -f1`
     echo "$i with $WCL lines copied and appended to Past File Listing"
     # email subject
-    EMSUB="$i:lines copied to $HOSTNAME"
-    echo $EMSUB
+    EMSUB="${i}_${WCL}"
     echo "no body text" | mail -s $EMSUB stabudesk@gmail.com
 done
